@@ -1,29 +1,31 @@
 export default function GreatLakesOutdoorCareSite() {
   const phones = ["517-994-8516", "616-902-8941", "989-640-5579"];
   const pricing = [
-    ["Lawn Mowing", "$110-$160/month (subject to change)", "Includes weekly mowing, clean line trimming, weed whacking, and blowing off hard surfaces for a sharp finished look."],
-    ["Leaf Removal", "$150-$275/month (subject to change)", "Fast seasonal cleanup for yards and walkways to keep the property clean and prevent buildup."],
-    ["Snow Removal", "$90-$150/month (subject to change)", "Reliable winter clearing with walkway attention and consistent service after snowfall."],
+    ["Lawn Care", "$120-$200/month (prices subject to change)", "Includes weekly mowing, clean line trimming, weed whacking, and blowing off hard surfaces for a sharp finished look."],
+    ["Leaf Removal", "$140-$230/month (prices subject to change)", "Fast seasonal cleanup for yards and walkways to keep the property clean and prevent buildup."],
+    ["Snow Removal", "$150-$240/month (prices subject to change)", "Reliable snow removal with driveway and walkway clearing, plus professional salting and ice-control treatment after winter snowfall events."],
+    ["Pressure Washing", "$200-$500 per yearly service (prices subject to change)", "A premium once-a-year pressure washing service for siding, driveways, patios, decks, walkways, and hard surfaces to restore curb appeal and remove built-up dirt, mildew, and stains."],
   ];
 
   const packages = [
     {
       title: "Lawn + Spring Cleanup",
-      price: "$140–$190/month",
+      price: "$600–$800 for spring & summer season",
       badge: "Most Popular",
-      items: ["Weekly mowing", "Trimming", "Weed whacking", "Blowing off driveway", "Spring cleanup service"],
+      items: ["Full spring cleanup and debris removal", "First-cut lawn prep and weekly mowing visits", "Routine trimming around edges and beds", "Detailed weed whacking around fences and trees", "Driveway, patio, and walkway blowing after each visit"],
     },
     {
-      title: "Lawn + Leaf/Snow Removal",
-      price: "$170–$230/month",
-      badge: "$40 more than Basic",
-      items: ["Weekly mowing", "Leaf removal during fall", "Snow removal during winter", "Driveway and walkway clearing"],
+      title: "Leaf & Snow Removal",
+      price: "$800–$1,000 for fall & winter season",
+      badge: "Premium Seasonal Value",
+      items: ["Complete fall leaf cleanup and haul-away", "Detailed leaf blowouts for beds and walkways", "Snow removal after winter snowfall events", "Driveway and main walkway clearing", "Professional salting and ice-control treatment for entryways and high-traffic walk areas"],
     },
     {
       title: "Full Year-Round Subscription",
-      price: "$210–$290/month",
+      price: "$220–$280/month",
       badge: "Best Value",
-      items: ["Weekly lawn mowing", "Spring cleanup", "Leaf removal", "Snow removal", "Driveway and walkway clearing", "Year-round seasonal property care"],
+      annualPrice: "$2,600–$3,300 annually",
+      items: ["Weekly lawn mowing during growing season", "Full spring cleanup and first-cut prep", "Routine trimming, edging, and weed whacking", "Hard-surface cleanup after each service visit", "Complete fall leaf cleanup and haul-away", "Snow removal after winter snowfall events", "Priority driveway, walkway, and entry clearing", "Professional winter salting and ice-control treatment for driveways and walkways", "Discounted annual pressure washing for siding, driveways, and patios"],
     },
   ];
 
@@ -52,8 +54,8 @@ export default function GreatLakesOutdoorCareSite() {
               <ul className="space-y-3 text-slate-100">
                 <li>✔ Reliable weekly service</li>
                 <li>✔ Premium professional presentation that builds trust</li>
-                <li>✔ Straightforward monthly pricing</li>
-                <li>✔ Year-round subscriptions that keep clients locked in</li>
+                <li>✔ Straightforward seasonal pricing</li>
+                <li>✔ Flexible 4-season plans that keep properties covered year-round</li>
                 <li>✔ Fast phone response and local trust</li>
               </ul>
             </div>
@@ -76,7 +78,7 @@ export default function GreatLakesOutdoorCareSite() {
 
       <section className="bg-slate-100">
         <div className="max-w-6xl mx-auto px-6 py-16">
-          <h2 className="text-4xl font-black mb-8">Monthly Packages</h2>
+          <h2 className="text-4xl font-black mb-8">Seasonal Packages</h2>
           <div className="grid lg:grid-cols-3 gap-6">
             {packages.map((pkg) => (
               <div key={pkg.title} className="rounded-3xl bg-white p-8 shadow-lg border border-slate-200">
@@ -87,6 +89,10 @@ export default function GreatLakesOutdoorCareSite() {
                   </span>
                 </div>
                 <p className="mt-3 text-xl font-semibold text-emerald-700">{pkg.price}</p>
+                {pkg.annualPrice && (
+                  <p className="mt-1 text-xl font-semibold text-emerald-700">{pkg.annualPrice}</p>
+                )}
+                <p className="mt-1 text-sm text-slate-500">(Prices subject to change)</p>
                 <ul className="mt-5 space-y-2 text-slate-700">
                   {pkg.items.map((item) => (
                     <li key={item}>• {item}</li>
@@ -160,7 +166,7 @@ export default function GreatLakesOutdoorCareSite() {
             <p className="font-semibold text-white">Business Email</p>
             <p className="text-slate-300">greatlakesoutdoorcare@gmail.com</p>
             <p className="mt-4 text-sm text-slate-500">
-              Located in Michigan and proudly serving Ionia County with dependable monthly lawn, leaf, and snow service plans.
+              Located in Michigan and proudly serving Ionia County with dependable seasonal lawn, leaf, and snow service plans.
             </p>
           </div>
         </div>
